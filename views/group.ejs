@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+<table class="table table-dark">
+
+    <tr>
+    <td>name</td>
+    <td>age</td>
+    <td>Hashing password</td>
+</tr>
+<%response.forEach((item)=>{%>
+<tr>
+<td><%=item._id.name%></td>
+<td><%=item._id.age%></td>
+<td><%=item._id.password%></td>
+</tr>
+<%});%>
+</table>

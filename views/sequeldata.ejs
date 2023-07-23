@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<style>
+    .blink{
+  animation: blinker 1s linear infinite;
+  color:red;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+</style>
+<%- include("nav") %>
+
+<% if(user){%>
+<table class="table table-dark">
+    <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Password</td>
+    <td>Image</td>
+    <td>Actions</td>
+</tr>
+<%response.forEach((item)=>{%>
+<tr>
+<td><%=item.id%></td>
+<td><%=item.name%></td>
+<td><%=item.password%></td>
+<td><img src="/Images/<%=item.image%>" width="70" height="60"></td>
+<td><button class="btn btn-light"><a href="/app/edit?id=<%=item.id%>">Update</a></button></td>
+<td><button class="btn btn-light"><a href="/app/delete?id=<%=item.id%>">Delete</a></button></td>
+</tr>
+<%});%>
+</table>
+<%}else{%>
+    <h1 class="blink">unauthorized access denied due to invalid credentials</h1>
+    <%}%>

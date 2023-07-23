@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<div class="container">
+  <div class="col-sm-6">
+<form action="/app/updatesequal" method="POST" enctype="multipart/form-data">
+    <input type="hidden" class="form-control" name="id" value="<%=response.id%>">
+
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" name="name" value="<%=response.name%>" >
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="text" class="form-control" name="password" value="<%=response.password%>" >
+    </div>
+    <div class="form-group">
+      <label>Upload Image</label>
+      <input type="file" class="form-control" name="image">
+      <img src="/Images/<%=response.image%>" width="70" height="60">
+    </div>
+          <input type="hidden" name="image1" value="<%=response.image%>">
+
+    <input type="hidden" name="_csrf" value="<%=csrftoken%>" >
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+  </div>

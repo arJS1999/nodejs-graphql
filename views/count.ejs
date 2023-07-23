@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+<table class="table table-dark">
+
+    <tr>
+    <td>No of Documents</td>
+    
+</tr>
+<%response.forEach((item)=>{%>
+<tr>
+<td><%=item.count%></td>
+
+</tr>
+<%});%>
+</table>
